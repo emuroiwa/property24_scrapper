@@ -2,13 +2,36 @@
 <html>
 <head>
     <title>Scraping Results</title>
+    <style>
+        pre {
+            white-space: pre-wrap;       /* CSS3 */
+            white-space: -moz-pre-wrap;  /* Firefox */
+            white-space: -pre-wrap;      /* Opera <7 */
+            white-space: -o-pre-wrap;    /* Opera 7 */
+            word-wrap: break-word;       /* IE */
+        }
+    </style>
 </head>
 <body>
     <h1>Scraping Results</h1>
+    <h2>Extracted Properties</h2>
     <ul>
-    {% for item in data %}
-        <li>{{ item }}</li>
+    {% for property in properties %}
+        <li>
+            <strong>{{ property.title }}</strong><br>
+            Price: {{ property.price }}<br>
+            Location: {{ property.location }}<br>
+            Address: {{ property.address }}<br>
+            Bedrooms: {{ property.bedrooms }}<br>
+            Bathrooms: {{ property.bathrooms }}<br>
+            Parking: {{ property.parking }}<br>
+            Size: {{ property.size }}<br>
+            Description: {{ property.description }}
+        </li>
     {% endfor %}
     </ul>
+    
+    <h2>HTML Dump</h2>
+   
 </body>
 </html>
